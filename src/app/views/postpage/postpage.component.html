@@ -1,1 +1,41 @@
-<p>postpage works!</p>
+<div class="postpage-wrapper">
+  <ng-container *ngIf="postJson && postJson.components">
+    <ng-container *ngFor="let component of postJson.components">
+      <div class="post-section">
+        <ng-container *ngIf="component.type == 'headline'">
+          <ng-container *ngIf="component.subtype == 'h1'">
+            <h1>{{ component.text }}</h1>
+          </ng-container>
+          <ng-container *ngIf="component.subtype == 'h2'">
+            <h2>{{ component.text }}</h2>
+          </ng-container>
+        </ng-container>
+
+        <ng-container *ngIf="component.type == 'text'">
+          <p>{{ component.text }}</p>
+        </ng-container>
+
+        <ng-container *ngIf="component.type == 'media'">
+          <ng-container *ngIf="component.sub_type == 'image'">
+            <img [src]="component.url" alt="" />
+          </ng-container>
+          <ng-container *ngIf="component.sub_type == 'video'">
+            <video [src]="component.url" alt=""></video>
+          </ng-container>
+        </ng-container>
+
+        <ng-container *ngIf="component.type == 'html'">
+          <div [innerHtml]="component.text"></div>
+        </ng-container>
+
+        <ng-container *ngIf="component.type == 'quote'">
+          <code>{{ component.text }}</code>
+        </ng-container>
+
+        <ng-container *ngIf="component.type == 'code'">
+          <pre><code [highlight]="component.text" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+        </ng-container>
+      </div>
+    </ng-container>
+  </ng-container>
+</div>

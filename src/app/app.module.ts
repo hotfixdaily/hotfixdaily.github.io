@@ -1,6 +1,12 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import {
+  HighlightModule,
+  HIGHLIGHT_OPTIONS,
+  HighlightOptions
+} from "ngx-highlightjs";
+import "highlight.js/styles/github.css";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -36,9 +42,17 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    HighlightModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: <HighlightOptions>{
+        lineNumbers: true
+      }
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

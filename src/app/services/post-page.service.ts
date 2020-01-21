@@ -8,8 +8,8 @@ export class PostPageService {
 
   getPost(url: string) {
     return new Promise((resolve, reject) => {
-      const proxyurl = "https://cors-anywhere.herokuapp.com/";
-      fetch(proxyurl + url, {
+      // const proxyurl = "https://cors-anywhere.herokuapp.com/";
+      fetch(url, {
         mode: "cors",
         headers: {
           "Access-Control-Allow-Origin": "*"
