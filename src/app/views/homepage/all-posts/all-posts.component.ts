@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-all-posts',
-  templateUrl: './all-posts.component.html',
-  styleUrls: ['./all-posts.component.css']
+  selector: "app-all-posts",
+  templateUrl: "./all-posts.component.html",
+  styleUrls: ["./all-posts.component.scss"]
 })
 export class AllPostsComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
