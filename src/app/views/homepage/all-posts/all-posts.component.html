@@ -1,3 +1,6 @@
-<div class="all-posts-wrapper">
-  all posts
+<div *ngFor="let response of Responses">
+  <app-post-preview [dummyData]="response"></app-post-preview>
+ 
 </div>
+
+
