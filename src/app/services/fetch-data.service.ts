@@ -32,4 +32,29 @@ export class FetchDataService {
   getAllBlogs() {
     return this.allBlogs;
   }
+
+  getBlogDetailsByQuery(q: string) {
+    return new Promise((resolve, reject) => {
+      this.afs
+        .collection("blogs", ref => ref.where("query", "==", q))
+        .valueChanges()
+        .subscribe(
+          (snaphot: any) => {
+            const data = snaphot[0] ? snaphot[0] : reject();
+            const blogData: Blog = {
+              id: data.id,
+              author: data.author,
+              jsonUrl: data.json_url,
+              category: data.category,
+              timestamp: data.created_at
+            };
+            resolve(blogData);
+          },
+          (error: any) => {
+            console.error(error);
+            reject();
+          }
+        );
+    });
+  }
 }
