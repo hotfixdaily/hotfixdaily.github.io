@@ -7,6 +7,9 @@ import {
   HighlightOptions
 } from "ngx-highlightjs";
 import "highlight.js/styles/github.css";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "angularfire2/firestore";
+import { environment } from "../environments/environment";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -43,7 +46,9 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    HighlightModule
+    HighlightModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [
     {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { FetchDataService } from "src/app/services/fetch-data.service";
 
 @Component({
   selector: "app-all-posts",
@@ -6,7 +7,11 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./all-posts.component.scss"]
 })
 export class AllPostsComponent implements OnInit {
-  constructor() {}
+  constructor(private fetchDataService: FetchDataService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.fetchDataService.getAllBlogs().subscribe(blogs => {
+      console.log(blogs);
+    });
+  }
 }
