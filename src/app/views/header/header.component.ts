@@ -52,4 +52,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     }
     return response;
   }
+
+  selectCategory(category: Category) {}
 }
