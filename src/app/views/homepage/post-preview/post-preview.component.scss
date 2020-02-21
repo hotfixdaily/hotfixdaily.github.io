@@ -6,6 +6,7 @@
 //   float: right;
 // }
 .preview-wrapper {
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -13,9 +14,54 @@
     display: flex;
     flex-direction: column;
   }
-  .preview-content {
-    img {
-      max-height: 120px;
-    }
+  .preview-image {
+    width: 400px;
+    background-size: cover;
+    background-position: 50% 50% !important;
   }
+}
+
+$font-size: 26px;
+$line-height: 1.4;
+$lines-to-show: 2;
+
+h2 {
+  //   display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  //   height: $font-size * $line-height * $lines-to-show; /* Fallback for non-webkit */
+  margin: 10px auto;
+  font-size: $font-size;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  --x-height-multiplier: 0.342 !important;
+  --baseline-multiplier: 0.22 !important;
+  font-family: medium-content-sans-serif-font, "Lucida Grande",
+    "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  letter-spacing: 0 !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  -webkit-transform: translateY(-0.72px);
+  transform: translateY(-0.72px);
+  letter-spacing: -0.42px !important;
+}
+
+.post-description {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #777777;
+  font-family: medium-content-sans-serif-font, "Lucida Grande",
+    "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif !important;
+}
+
+.about-blog {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
 }

@@ -23,7 +23,7 @@ import { PostPreviewComponent } from "./views/homepage/post-preview/post-preview
 
 const appRoutes: Routes = [
   {
-    path: "blog",
+    path: "blog/:id",
     component: PostpageComponent
   },
   {

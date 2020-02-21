@@ -24,22 +24,25 @@ export class PostpageComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {}
   ngAfterViewInit() {
-    console.log(this.router);
-    const postQueryParams = <any>this.router.queryParams["_value"]["post"];
-    const status = this.fetchDataService.getBlogDetailsByQuery(postQueryParams);
-    status
-      .then(postData => {
-        this.postData = postData;
-        this.postPageService
-          .getPost(this.postData.jsonUrl)
-          .then(json => {
-            this.postJson = json;
-          })
-          .catch(err => {
-            console.log(err);
-          });
-      })
-      .catch(error => {});
+    this.router.params.subscribe(params => {
+      const postQueryParams = params["id"];
+      const status = this.fetchDataService.getBlogDetailsByQuery(
+        postQueryParams
+      );
+      status
+        .then(postData => {
+          this.postData = postData;
+          this.postPageService
+            .getPost(this.postData.jsonUrl)
+            .then(json => {
+              this.postJson = json;
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        })
+        .catch(error => {});
+    });
   }
 
   onHighlight(e) {
