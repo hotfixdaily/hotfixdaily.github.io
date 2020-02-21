@@ -1,0 +1,21 @@
+// * {
+//   box-sizing: border-box;
+// }
+
+// .img-container {
+//   float: right;
+// }
+.preview-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .preview-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .preview-content {
+    img {
+      max-height: 120px;
+    }
+  }
+}

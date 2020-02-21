@@ -1,6 +1,41 @@
-.homepage-wrapper {
+/* .homepage-wrapper {
   margin: 0 350px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 4px 4px;
+}
+
+.side {
+  flex: 70%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  flex: 30%;
+  background-color: white;
+  padding: 20px;
+}
+
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+@media screen and (max-width: 900px) {
+  .row {
+    flex-direction: column;
+  }
 }
