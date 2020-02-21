@@ -4,48 +4,34 @@
   </div>
   <nav>
     <ul>
+      <ng-container *ngFor="let item of displayCategories.important">
+        <li>
+          <a (click)="selectCategory(item)" href="">{{ item.categoryName }}</a>
+        </li>
+      </ng-container>
       <li>
-        <a href="">Angular</a>
-      </li>
-      <li class="dropdown">
-        <a href="">React</a>
-      </li>
-      <li>
-        <a href="">Vue</a>
-      </li>
-      <li>
-        <a href="">javascript</a>
-      </li>
-      <li>
-        <a href="">More</a>
-        <ul class="mega-dropdown">
-          <li class="row">
-            <ul class="mega-col">
-              <li><a href="#">About</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-            <ul class="mega-col">
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Pricing</a></li>
-              <li><a href="#">Team</a></li>
-              <li><a href="#">Services</a></li>
-            </ul>
-            <ul class="mega-col">
-              <li><a href="#">Coming Soon</a></li>
-              <li><a href="#">404 Error</a></li>
-              <li><a href="#">Search</a></li>
-              <li><a href="#">Author Page</a></li>
-            </ul>
-            <ul class="mega-col">
-              <li><a href="#">Full Width</a></li>
-              <li><a href="#">Right Column</a></li>
-              <li><a href="#">Left Column</a></li>
-              <li><a href="#">Maintenance</a></li>
-            </ul>
-          </li>
-        </ul>
+        <ng-container *ngIf="displayCategories.more.length">
+          <a href="">More</a>
+          <ul class="mega-dropdown">
+            <li class="row">
+              <ng-container *ngFor="let moreCat of displayCategories.more">
+                <ul class="mega-col">
+                  <ng-container *ngFor="let category of moreCat">
+                    <li>
+                      <a href="">{{ category.categoryName }}</a>
+                    </li>
+                  </ng-container>
+                </ul>
+              </ng-container>
+              <!-- <ul class="mega-col">
+                <li><a href="#">About</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul> -->
+            </li>
+          </ul>
+        </ng-container>
       </li>
     </ul>
   </nav>
