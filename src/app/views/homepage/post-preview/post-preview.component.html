@@ -1,30 +1,20 @@
-<!-- <br />
-<br />
-<div>
-  <div class="img-container">
-    <img
-      src="https://www.w3schools.com/images/w3schools_green.jpg"
-      alt="W3Schools.com"
-      style="width:104px;height:142px;"
-    />
-  </div>
-
-  <div>
-    <h4>{{ dummyData.header }}</h4>
-    <div>{{ dummyData.subHeader }}</div>
-    <div>{{ dummyData.Date }}</div>
-  </div>
-</div> -->
-
 <br />
 
-<div class="preview-wrapper">
+<div class="preview-wrapper" (click)="openBlogPost()">
   <div class="preview-content">
-    <h4>{{ dummyData.header }}</h4>
-    <div>{{ dummyData.subHeader }}</div>
-    <div>{{ dummyData.Date }}</div>
+    <h2>{{ blogData.headline }}</h2>
+    <div class="post-description">{{ blogData.description }}</div>
+    <div class="about-blog">
+      <div>{{ blogData.timestamp.seconds * 1000 | date }}</div>
+      <div>, &nbsp;{{ blogData.author }}</div>
+    </div>
+    <!-- <div class="author">{{blogData.author}}</div> -->
+    <!-- <div>{{ blogData.timestamp }}</div> -->
   </div>
-  <div class="preview-image">
-    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="" />
+  <div class="preview-image" #previewImage>
+    <!-- <img
+      src="https://hotfixdaily-media.s3.ap-south-1.amazonaws.com/whynodejsefficient/custom-languages.png"
+      alt=""
+    /> -->
   </div>
 </div>
