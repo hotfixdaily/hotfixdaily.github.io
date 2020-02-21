@@ -13,7 +13,12 @@ export interface Blog {
   timestamp?: Date;
 }
 
-export interface Categories {
+export interface Category {
   id: string;
-  category_name: string;
+  categoryName: string;
+}
+
+export class DisplayCategory {
+  important: Category[];
+  more: Category[][];
 }

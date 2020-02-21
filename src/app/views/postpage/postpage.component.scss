@@ -4,4 +4,10 @@
 
 .post-section {
   margin: 40px 0;
+  width: calc(100% - 80px);
+  img {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
+  }
 }
