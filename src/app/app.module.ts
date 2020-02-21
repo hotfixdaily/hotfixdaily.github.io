@@ -9,6 +9,7 @@ import {
 import "highlight.js/styles/github.css";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "angularfire2/firestore";
+import { CommonModule } from "@angular/common";
 import { environment } from "../environments/environment";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -18,6 +19,7 @@ import { HomepageComponent } from "./views/homepage/homepage.component";
 import { AllPostsComponent } from "./views/homepage/all-posts/all-posts.component";
 import { PopularPostsComponent } from "./views/homepage/popular-posts/popular-posts.component";
 import { PostpageComponent } from "./views/postpage/postpage.component";
+import { PostPreviewComponent } from "./views/homepage/post-preview/post-preview.component";
 
 const appRoutes: Routes = [
   {
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     HomepageComponent,
     AllPostsComponent,
     PopularPostsComponent,
-    PostpageComponent
+    PostpageComponent,
+    PostPreviewComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ const appRoutes: Routes = [
     ),
     HighlightModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    CommonModule
   ],
   providers: [
     {
