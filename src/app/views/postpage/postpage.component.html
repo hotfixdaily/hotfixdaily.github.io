@@ -3,10 +3,10 @@
     <ng-container *ngFor="let component of postJson.components">
       <div class="post-section">
         <ng-container *ngIf="component.type == 'headline'">
-          <ng-container *ngIf="component.subtype == 'h1'">
+          <ng-container *ngIf="component.sub_type == 'h1'">
             <h1>{{ component.text }}</h1>
           </ng-container>
-          <ng-container *ngIf="component.subtype == 'h2'">
+          <ng-container *ngIf="component.sub_type == 'h2'">
             <h2>{{ component.text }}</h2>
           </ng-container>
         </ng-container>
