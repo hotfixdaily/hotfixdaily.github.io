@@ -11,7 +11,7 @@ import { Blog } from "src/app/models/db-collections";
   styleUrls: ["./postpage.component.scss"]
 })
 export class PostpageComponent implements OnInit, AfterViewInit {
-  postJson = {};
+  postJson: any = null;
   postData: Blog;
 
   highlightResult: HighlightResult;

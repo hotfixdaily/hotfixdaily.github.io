@@ -13,7 +13,7 @@ export interface Blog {
   author?: string; // username of the blogger
   jsonUrl?: string; // s3 link of the blog post json
   category?: string;
-  timestamp?: Date;
+  timestamp?: any;
   readTime?: number;
   queryParam?: string;
 }
