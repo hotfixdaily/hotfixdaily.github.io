@@ -1,5 +1,7 @@
 # Hotfixdaily
 
+This is an open source project. Happy to see contributors who would be interested in picking up small features/bugs.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
 ## Development server
